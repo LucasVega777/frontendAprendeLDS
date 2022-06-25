@@ -13,7 +13,7 @@ function Palabras() {
 
     const [termino, setTermino] = useState(query.get("termino"));
     const [datos, setDatos] = useState([]);
-    let url = `https://api-lds.herokuapp.com/api/v1/palabras/busqueda?termino=abrazo`;
+    let url = `https://api-lds.herokuapp.com/api/v1/palabras/busqueda?termino=`;
 
     useEffect(() => {
         console.log(url);
@@ -58,12 +58,12 @@ function Palabras() {
                 <h2>Our Services</h2>
 
                 </div>
-
+                <div className="row gy-4">
                 {
                     datos.map((palabra)=>{
                         if(palabra.plataforma === 'youtube')
                             return (
-                                <div className="row gy-4">
+                                
                             
                                     <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                                         <div className="card">
@@ -75,11 +75,11 @@ function Palabras() {
                                         </div> 
                                     </div>
                                 
-                                </div>
+                                
                             )
                         else {
                             return (
-                                <div className="row gy-4">
+                                
                             
                                     <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                                         <div className="card">
@@ -88,13 +88,13 @@ function Palabras() {
                                         </div> 
                                     </div>
                                 
-                                </div>
+                             
                             )
                         }
                     })
 
                 }
-                    
+                </div>
 
             </div>
             </section>
