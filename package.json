@@ -1,8 +1,8 @@
 {
   "name": "aprendelds",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "private": true,
-  "homepage": "http://lucasvega77.github.io/frontendaprendelds",
+  "homepage": "http://lucasvega77.github.io/frontendAprendeLDS",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -16,7 +16,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "deploy": "gh-pages -d ./",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
