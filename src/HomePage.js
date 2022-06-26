@@ -6,20 +6,8 @@ import Footer from "./componentes/footer";
 function HomePage({setTerminoBusqueda, terminoBusqueda}) {
   const [menu, setMenu] = useState('mobile-nav-show');
   const [x, setX] = useState('mobile-nav-hide d-none');
-  const buscar = async(str) => {
-    if (str.length === 0) {
-        setTerminoBusqueda('')
-        return;
-    }
-    setTerminoBusqueda(str);
-  }
+  // const [terminoBusqueda, setTerminoBusqueda] = useState('')
 
-  const redirigir = async() => {
-      let url = `/busqueda/?termino=${terminoBusqueda}`
-      setTerminoBusqueda('');
-      window.location.href= url;
-  }
-  
   return (
       <div>
         <header id={'header'} className={'header d-flex align-items-center fixed-top'}>
@@ -54,10 +42,11 @@ function HomePage({setTerminoBusqueda, terminoBusqueda}) {
                 <form action={''} 
                    className={'form-search d-flex align-items-stretch mb-3'} data-aos={'fade-up'} data-aos-delay={'200'}>
                   <input type={'text'} className={'form-control'} placeholder={'Ingrese un término de búsqueda'} 
-                    id={'termino'} onChange={(event) => buscar(event.target.value)}
+                    id={'termino'}
                   />
-                  <button type={'submit'} className={'btn btn-primary'}
-                  onClick={()=> redirigir()} disabled={terminoBusqueda.length === 0}>Buscar</button>
+                  <button type={'submit'} className={'btn btn-primary'}>
+                    Buscar
+                  </button>
                 </form>
 
                 
