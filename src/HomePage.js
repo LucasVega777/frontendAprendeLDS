@@ -1,13 +1,32 @@
-import React, {useState, useEfect} from "react";
+import React, {useState, useEffect} from "react";
 import logo from './logo.png';
 import logormbg from './logormbg.png';
 import Footer from "./componentes/footer";
+import Palabras from "./Palabras";
+import axios from 'axios';
 
-function HomePage({setTerminoBusqueda, terminoBusqueda}) {
+function HomePage() {
   const [menu, setMenu] = useState('mobile-nav-show');
   const [x, setX] = useState('mobile-nav-hide d-none');
-  // const [terminoBusqueda, setTerminoBusqueda] = useState('')
+  const [terminoBusqueda, setTerminoBusqueda] = useState('');
+  const [datos, setDatos] = useState([]);
 
+  const buscar = async(str) => {
+    if (str.length === 0) {
+        setTerminoBusqueda('')
+        return;
+    }
+    setTerminoBusqueda(encodeURI(str));
+  }
+
+  
+  const busqueda = async() => {
+    let url = `https://api-lds.herokuapp.com/api/v1/palabras/busqueda?termino=${terminoBusqueda}`;
+    let response = await axios.get(url);
+    setDatos(response.data);    
+  }
+
+  useEffect(() => {}, [datos]);
   return (
       <div>
         <header id={'header'} className={'header d-flex align-items-center fixed-top'}>
@@ -39,16 +58,17 @@ function HomePage({setTerminoBusqueda, terminoBusqueda}) {
                   Te ayudare a buscar la palabra que desees dentro de mi base de datos.
                 </p>
 
-                <form action={''} 
-                   className={'form-search d-flex align-items-stretch mb-3'} data-aos={'fade-up'} data-aos-delay={'200'}>
-                  <input type={'text'} className={'form-control'} placeholder={'Ingrese un término de búsqueda'} 
-                    id={'termino'}
-                  />
-                  <button type={'submit'} className={'btn btn-primary'}>
-                    Buscar
-                  </button>
-                </form>
-
+                <section>
+                  <div
+                    className={'form-search d-flex align-items-stretch mb-3'} >
+                      <input type={'text'} className={'form-control'} placeholder={'Ingrese un término de búsqueda'} 
+                        id={'termino'} onChange={(event) => buscar(event.target.value)}
+                      />
+                      <button type={'submit'} className={'btn btn-primary'} onClick={()=> busqueda()}>
+                        Buscar
+                      </button>
+                  </div>
+                </section>
                 
               </div>
 
@@ -97,6 +117,11 @@ function HomePage({setTerminoBusqueda, terminoBusqueda}) {
             </div>
           </section>
 
+          
+            
+          {  (datos.length != 0)? <Palabras datos={datos}/> : ''}
+            
+          
       
           <section id="about" className={'about pt-0'}>
             <div className={'container'} data-aos={'fade-up'}>

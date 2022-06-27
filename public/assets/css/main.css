@@ -1781,13 +1781,13 @@ section {
   margin-bottom: 40px;
 }
 
-.hero form {
+.hero section div {
   background: #fff;
   padding: 10px;
   border-radius: 10px;
 }
 
-.hero form .form-control {
+.hero div .form-control {
   padding-top: 18px;
   padding-bottom: 18px;
   padding-left: 20px;
@@ -1798,13 +1798,13 @@ section {
   background: none !important;
 }
 
-.hero form .form-control:hover,
-.hero form .form-control:focus {
+.hero div .form-control:hover,
+.hero div .form-control:focus {
   outline: none;
   box-shadow: none;
 }
 
-.hero form .btn-primary {
+.hero div .btn-primary {
   background-color: var(--color-primary);
   padding: 15px 30px;
 }
