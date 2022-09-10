@@ -133,7 +133,7 @@ function HomePage() {
                 <div className={'col-lg-6 content order-last  order-lg-first'}>
                   <h3>Acerca de Este Proyecto</h3>
                   <p>
-                    Este es un proyecto OpenSource, sin fines de lucro, creada para facilitar la busqueda y aprendizaje de palabras de la lengua de señas, diseñado por Lucas Vega, si desea realizar algun aporte en el codigo fuente, no dude en visitar nuestros repositorios
+                    Este es un proyecto OpenSource, sin fines de lucro, creada para facilitar la busqueda y aprendizaje de palabras de la lengua de señas, diseñado por Lucas Vega, si desea realizar algun aporte en el código fuente, no dude en visitar nuestros repositorios
                   </p>
                   <ul>
                     <li data-aos={'fade-up'} data-aos-delay={'100'}>
