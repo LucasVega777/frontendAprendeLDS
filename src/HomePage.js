@@ -119,7 +119,7 @@ function HomePage() {
 
           
             
-          {  (datos.length != 0)? <Palabras datos={datos}/> : ''}
+          {  (datos.length !== 0)? <Palabras datos={datos}/> : ''}
             
           
       
