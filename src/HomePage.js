@@ -55,7 +55,7 @@ function HomePage() {
               <div className={'col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center'}>
                 <h2 data-aos={'fade-up'}> Aprende Lengua de Señas</h2>
                 <p>
-                  Te ayudare a buscar la palabra que desees dentro de mi base de datos.
+                  Te ayudaré a buscar la palabra que desees dentro de mi base de datos.
                 </p>
 
                 <section>
